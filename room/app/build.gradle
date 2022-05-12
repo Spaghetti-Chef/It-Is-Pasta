@@ -29,7 +29,11 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+        viewBinding true
+    }
 }
+apply plugin: 'kotlin-kapt'
 
 dependencies {
 
@@ -40,4 +44,21 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    // room
+    implementation "androidx.room:room-runtime:2.4.2"
+    kapt "androidx.room:room-compiler:2.4.2"
+    implementation "androidx.room:room-ktx:2.4.2"
+
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1"
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.1"
+
+    // Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    // 코루틴
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0'
 }
